@@ -1,5 +1,4 @@
 name: ci
-
 on:
   schedule:
     - cron: '0 10 * * *'
@@ -8,7 +7,6 @@ on:
       - 'main'
     tags:
       - 'v*.*.*'
-
 jobs:
   docker:
     runs-on: docker
@@ -45,4 +43,4 @@ jobs:
           # We do not push tags for the cron jobs, this is only for test purposes
           push: ${{ github.event_name != 'schedule' }}
           platforms: linux/amd64,linux/arm64
-          tags: ${{ steps.meta.outputs.tags }} 
+          tags: ${{ steps.meta.outputs.tags }}
