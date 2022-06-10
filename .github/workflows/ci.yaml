@@ -1,12 +1,15 @@
-name: ci
+---
 on:
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '0 4 * * *' # Every day at 4:00am
   push:
-    branches:
-      - 'main'
     tags:
-      - 'v*.*.*'
+      - '*'
+  release:
+    types: [released]
+
+name: Publish tagged images to Docker Hub
+
 jobs:
   docker:
     runs-on: docker
