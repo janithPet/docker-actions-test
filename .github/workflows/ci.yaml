@@ -42,7 +42,9 @@ jobs:
 
       - name: Echo ref_name
         id: ref
-        run: echo ${{ github.ref_name == 'v0.[0-9]+.0' }}
+        run: |
+          echo ${{ github.ref_name == 'v0.9.0' }}
+          echo ${{ github.ref_name }}
         
       # - name: Build and push
       #   id: docker_build
