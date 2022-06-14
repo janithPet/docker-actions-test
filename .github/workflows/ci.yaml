@@ -39,7 +39,9 @@ jobs:
             else
               echo ::set-output name=match::false
           fi
-
+      - name: Test output
+        run: |
+          echo ${{ steps.check-tag-format.outputs.match  }}
       # - name: Docker meta
       #   id: meta
       #   uses: docker/metadata-action@v3
