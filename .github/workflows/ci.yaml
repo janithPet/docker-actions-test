@@ -1,7 +1,5 @@
 ---
 on:
-  schedule:
-    - cron: '0 4 * * *' # Every day at 4:00am
   push:
     tags:
       - '*'
